@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Mar  7 10:59:57 2022
-
 @author: krish
 """
 import tensorflow as tf
