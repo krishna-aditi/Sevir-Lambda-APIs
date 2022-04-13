@@ -5,6 +5,8 @@ Report link (GoogleDoc): https://docs.google.com/document/d/1NyDmaHg2dv5cyK_g-cm
 
 GCP host link for FastAPI - Swagger UI: 
 
+Data Studio Live Dashboard link: https://datastudio.google.com/embed/reporting/aba0d648-f51e-4817-87bc-c8dd5c8bf1af/page/iFzpC
+
 Streamlit Cloud link: 
 
 ==========================================================================
