@@ -43,7 +43,7 @@ matplotlib 3.2.0
 Streamlit
 ```
 #### JSON Blueprint
-
+```
 {
  "lat":37.318363,
  "lon":-84.224203, 
@@ -54,7 +54,7 @@ Streamlit
  "closest_radius":true,
  "force_refresh":false
 }
-
+```
 #### Fast API
 FastAPI is a high-performance web-framework used for building APIs. The SEVIR API is built upon FastAPI.
 
@@ -79,6 +79,7 @@ $ uvicorn nowcast_main:app –reload
 
 ![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/ecr_push.png)
 Fig. BERT-Lambda docker image pushed to Amazon ECR
+
 ![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/bert-lambda-postman.png)
 Fig. Testing BERT API on Postman
 
@@ -163,7 +164,6 @@ docker tag sevir-summary-test $aws_account_id.dkr.ecr.$aws_region.amazonaws.com/
 docker push $aws_account_id.dkr.ecr.$aws_region.amazonaws.com/sevir-summary
 ```
 ![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/local_docker_test.png)
-
 Fig. Testing summarization docker locally
 
 #### Deploying AWS Lambda function with docker image
@@ -191,7 +191,6 @@ functions:
 serverless deploy
 ```
 ![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/ecr_push.png)
-
 Fig. Deploying the lambda function
 
 #### Streamlit
