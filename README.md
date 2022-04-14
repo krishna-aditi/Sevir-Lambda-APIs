@@ -246,6 +246,12 @@ Project Organization
     │   │   ├── nowcast_utils.py
     │   │   ├── app.yaml
     │   │   ├── streamlit-app.py
+    │   │   ├── sevir-ner
+    |   |   |    ├── handler.py
+    |   |   |    ├── get-model.py
+    |   |   |    ├── requirements.txt
+    |   |   |    └── serverless.yml
+    |   |   |
     │   │   └── summary-api
     |   |       ├── handler.py
     |   |       ├── get-model.py
