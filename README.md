@@ -3,7 +3,7 @@ SEVIR Lambda functions for Summarization and Named-Entity Recognition
 
 Report link (GoogleDoc): https://docs.google.com/document/d/1NyDmaHg2dv5cyK_g-cmX7KuiQ3NuAcH3muKhU8A9ddk/edit#heading=h.9fvmf7j8mnk5
 
-GCP host link for FastAPI - Swagger UI: 
+GCP host link for FastAPI - Swagger UI: https://sevir-nlp.ue.r.appspot.com
 
 Data Studio Live Dashboard link: https://datastudio.google.com/embed/reporting/aba0d648-f51e-4817-87bc-c8dd5c8bf1af/page/iFzpC
 
