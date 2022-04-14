@@ -26,6 +26,19 @@ def summarize(params_test,st):
         st.markdown(f'{event}')
     else:
         st.error({'ECR error': sevir_output_summary['message']})
+def ner(params_test,st):
+    summary_test = requests.post("https://g0sjzf2dz6.execute-api.us-east-1.amazonaws.com/dev/ner", json = params_test)      
+    sevir_output_ner = summary_test.json()
+    print('sevir_output_ner: ', sevir_output_ner)
+    if 'episode_ner' and 'event_ner' in sevir_output_ner.keys():
+        st.subheader('Episode NER: \n')
+        episode = sevir_output_ner['episode_ner']
+        st.markdown(f'{episode}')
+        st.subheader('Event NER: \n')
+        event = sevir_output_ner['event_ner']
+        st.markdown(f'{event}')
+    else:
+        st.error({'ECR error': sevir_output_ner['message']})
 def main():
     st.title("API for Federal Avaiation Administration")
     html_temp = """
@@ -47,7 +60,7 @@ def main():
         col1, col2 = st.columns([0.2,1])
         if col1.button("Login")  or s.authenticated:
             s.authenticated = True
-            token = requests.post("http://127.0.0.1:8000/token", data = authjson)
+            token = requests.post("https://sevir-nlp.ue.r.appspot.com/token", data = authjson)
             if col2.button("Log Out"):
                 s.authenticated = False
                 token = None
@@ -60,7 +73,7 @@ def main():
             if token.status_code == 200: 
                 jwttoken = token.json()['access_token']
                 headers = {"Authorization": f"Bearer {jwttoken}"}
-                response = requests.post("http://127.0.0.1:8000/nowcast/dashboard", headers=headers)
+                response = requests.post("https://sevir-nlp.ue.r.appspot.com/nowcast/dashboard", headers=headers)
                 if response.status_code == 200:
                     url = response.json()['url']
                     st.markdown(f"""
@@ -83,7 +96,7 @@ def main():
         col1, col2 = st.columns([0.2,1])
         if col1.button("Login")  or s.authenticated:
             s.authenticated = True
-            token = requests.post("http://127.0.0.1:8000/token", data = authjson)
+            token = requests.post("https://sevir-nlp.ue.r.appspot.com/token", data = authjson)
             if col2.button("Log Out"):
                 s.authenticated = False
                 token = None
@@ -110,7 +123,7 @@ def main():
                 
                 params_test_summary = {"lat": lat, "lon": lon, "radius": radius, "time_utc": time_utc, "closest_radius": bool(closest_radius)}
                 if st.button("Predict"):
-                    nowcast_test = requests.post("http://127.0.0.1:8000/nowcast/predict", headers=headers, json = params_test)      
+                    nowcast_test = requests.post("https://sevir-nlp.ue.r.appspot.com/nowcast/predict", headers=headers, json = params_test)      
                     sevir_output_test = nowcast_test.json()
                     if 'nowcast_error' in sevir_output_test.keys():
                         st.error({'nowcast_error': sevir_output_test['nowcast_error']})
@@ -126,13 +139,14 @@ def main():
                                 path+=a
                                 append=True
                         project_name = 'Assignment-4'
-                        credentials = os.path.join(abspath,"cred.json")
-                        FS = gcsfs.GCSFileSystem(project=project_name, token=credentials)
+                        
+                        FS = gcsfs.GCSFileSystem(project=project_name)
                         with FS.open(path, 'rb') as data_file:                
                             gif_content = data_file.read()
                         data_url = base64.b64encode(gif_content).decode("utf-8")
                         st.markdown(f'<p align="center"><img src="data:image/gif;base64,{data_url}" alt="Nowcasted GIF"></p>', unsafe_allow_html=True)
                         summarize(params_test_summary,st)
+                        ner(params_test_summary,st)
             else:
                 st.markdown(f"Login Failure. {token.json()['detail']}")
     return None
