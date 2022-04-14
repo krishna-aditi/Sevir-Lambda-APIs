@@ -140,7 +140,7 @@ def main():
                                 append=True
                         project_name = 'Assignment-4'
                         
-                        FS = gcsfs.GCSFileSystem(project=project_name)
+                        FS = gcsfs.GCSFileSystem()
                         with FS.open(path, 'rb') as data_file:                
                             gif_content = data_file.read()
                         data_url = base64.b64encode(gif_content).decode("utf-8")
