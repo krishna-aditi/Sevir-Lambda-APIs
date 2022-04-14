@@ -7,7 +7,7 @@ GCP host link for FastAPI - Swagger UI: https://sevir-nlp.ue.r.appspot.com
 
 Data Studio Live Dashboard link: https://datastudio.google.com/embed/reporting/aba0d648-f51e-4817-87bc-c8dd5c8bf1af/page/iFzpC
 
-Streamlit Cloud link: 
+Streamlit Cloud link: https://share.streamlit.io/krishna-aditi/sevir-lambda-apis/main/src/data/streamlit-app.py
 
 ==========================================================================
 
