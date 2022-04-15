@@ -27,7 +27,7 @@ def summarize(params_test,st):
     else:
         st.error({'ECR error': sevir_output_summary['message']})
 def ner(params_test,st):
-    summary_test = requests.post("https://g0sjzf2dz6.execute-api.us-east-1.amazonaws.com/dev/ner", json = params_test)      
+    summary_test = requests.post("https://x015qjm418.execute-api.us-east-1.amazonaws.com/dev/ner", json = params_test)      
     sevir_output_ner = summary_test.json()
     print('sevir_output_ner: ', sevir_output_ner)
     if 'episode_ner' and 'event_ner' in sevir_output_ner.keys():
