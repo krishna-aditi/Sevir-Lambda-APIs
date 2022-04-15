@@ -273,10 +273,14 @@ Project Organization
 ![image](https://user-images.githubusercontent.com/37017771/153502035-dde7b1ec-5020-4505-954a-2e67528366e7.png)
 
 #### **Contribution:**
-Aditi Krishna - 50%
-Sushrut Mujumdar - 25% 
-Abhishek Jaiswal - 25%
+Aditi Krishna - 40%
+Sushrut Mujumdar - 30% 
+Abhishek Jaiswal - 30%
 
 #### **Attestation:**
 
 WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK. 
+
+#### **Attestation for BERT tutorial:**
+
+
