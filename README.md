@@ -282,5 +282,5 @@ Abhishek Jaiswal - 30%
 WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK. 
 
 #### **Attestation for BERT tutorial:**
-
+We attest that every group member implemented the BERT tutorial on AWS.
 
