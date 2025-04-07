@@ -56,9 +56,6 @@ Run the live server using Uvicorn:
 ```
 $ uvicorn nowcast_main:app –reload
 ```
-#### BigQuery User Logging for Nowcast API
-
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/user_logging_bigquery.png)
 
 #### HuggingFace BERT tutorial
 
@@ -70,12 +67,6 @@ $ uvicorn nowcast_main:app –reload
 5. Deploy a custom docker image to ECR
 6. Deploy AWS Lambda function with a custom docker image
 7. Test our Serverless BERT API
-
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/ecr_push.png)
-Fig. BERT-Lambda docker image pushed to Amazon ECR
-
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/bert-lambda-postman.png)
-Fig. Testing BERT API on Postman
 
 #### Docker
 A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments. We created local images for the BERT tutorial, as well as for the Summarization and NER APIs.
@@ -124,8 +115,6 @@ docker run -p 8080:8080 sevir-summary-test
 ```
 curl --request POST --url http://localhost:8080/2015-03-31/functions/function/invocations --header 'Content-Type:application/json'  --data "{ \"lat\": 37.318363, \"lon\" : -84.224203, \"radius\" : 200, \"time_utc\" : \"2019-06-02 18:33:00\", \"closest_radius\" : true}"
 ```
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/docker.png)
-Fig. Docker Desktop with docker images for BERT-lambda tutorial and Summarization
 
 #### Deploy the Summarization and NER docker images to ECR
 
@@ -157,8 +146,6 @@ docker tag sevir-summary-test $aws_account_id.dkr.ecr.$aws_region.amazonaws.com/
 ```
 docker push $aws_account_id.dkr.ecr.$aws_region.amazonaws.com/sevir-summary
 ```
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/local_docker_test.png)
-Fig. Testing summarization docker locally
 
 #### Deploying AWS Lambda function with docker image
 1. Create a serverless.yaml file with the following configuration
@@ -184,8 +171,6 @@ functions:
 ```
 serverless deploy
 ```
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/ecr_push.png)
-Fig. Deploying the lambda function
 
 #### Streamlit
 Streamlit is an open-source python framework for building web apps for Machine Learning and Data Science. We can instantly develop web apps and deploy them easily using Streamlit. It allows you to write an app the same way you write a python code. It pulls data using FastAPI. 
@@ -194,14 +179,6 @@ You could also run it on your local system using the following command.
 ```
 $ streamlit run streamlit-app.py
 ```
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/streamlit_login.png)
-Fig. User authentication on Streamlit
-
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/streamlit_summary_api.png)
-Fig. Event and Episode summarization
-
-![image](https://github.com/krishna-aditi/Sevir-Lambda-APIs/blob/main/reports/figures/dashboard_full.png)
-Fig. Data Studio dashboard embedded on Streamlit interface
 
 #### References
 1. https://fastapi.tiangolo.com/tutorial/first-steps/
